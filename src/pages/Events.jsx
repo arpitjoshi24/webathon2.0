@@ -21,7 +21,7 @@ const events = [
 
 export default function Events() {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-16">
+    <section id="events" className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-16">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
