@@ -21,7 +21,7 @@ export default function Register() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-900 via-black to-purple-950 overflow-hidden px-6">
+    <div id="register" className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-900 via-black to-purple-950 overflow-hidden px-6">
       {/* Floating Glowing Shapes */}
       <motion.div
         animate={{ y: [0, 20, 0], opacity: [0.6, 1, 0.6] }}
