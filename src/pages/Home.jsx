@@ -29,7 +29,7 @@ export default function Hero() {
           transition={{ duration: 1.2 }}
           className="text-5xl md:text-7xl font-extrabold mb-4"
         >
-          Nirvana Tech Fest 2025
+          Nirvana Tech Fest 2.0
         </motion.h1>
 
        

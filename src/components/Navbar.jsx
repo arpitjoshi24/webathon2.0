@@ -17,13 +17,20 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <motion.h1
-          className="text-2xl font-bold text-white tracking-wider"
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          Nirvana<span className="text-purple-500">Fest</span>
-        </motion.h1>
+       <div className="flex items-center gap-2">
+  <img
+    src="/logo_color.png" // ✅ use leading slash for public assets
+    alt="Nirvana Fest Logo"
+    className="h-10 w-auto"
+  />
+  <motion.h1
+    className="text-2xl font-bold text-white tracking-wider"
+    initial={{ opacity: 0, x: -40 }}
+    animate={{ opacity: 1, x: 0 }}
+  >
+    Nirvana<span className="text-purple-500">Fest</span>
+  </motion.h1>
+</div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-8">
