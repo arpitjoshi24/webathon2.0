@@ -1,5 +1,6 @@
 
 import './App.css'
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import About from './pages/About'
 import Events from './pages/Events'
@@ -16,6 +17,7 @@ function App() {
      <About/>
      <Events/>
      <Register/>
+     <Footer/>
     </>
   )
 }

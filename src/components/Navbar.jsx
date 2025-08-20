@@ -9,7 +9,7 @@ export default function Navbar() {
     { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Events", href: "#events" },
-    { name: "Speakers", href: "#speakers" },
+   
     { name: "Register", href: "#register" },
   ];
 

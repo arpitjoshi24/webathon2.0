@@ -54,12 +54,16 @@ export default function Hero() {
           transition={{ delay: 1, duration: 1 }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform">
+          <a href="#register">
+            <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform">
              Register Now
           </button>
-          <button className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold shadow-md hover:bg-white/20 transition">
+          </a>
+          <a href="#about">
+            <button className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold shadow-md hover:bg-white/20 transition">
              Explore Events
           </button>
+          </a>
         </motion.div>
       </motion.div>
     </section>

@@ -66,7 +66,7 @@ export default function Events() {
     setIndex((prev) => (prev - 1 + events.length) % events.length);
 
   return (
-    <section className="bg-black py-16">
+    <section id="events" className="bg-black py-16">
       <div className="relative w-full max-w-4xl mx-auto px-4">
         <div className="overflow-hidden rounded-2xl shadow-2xl border border-purple-700">
           <AnimatePresence mode="wait">
