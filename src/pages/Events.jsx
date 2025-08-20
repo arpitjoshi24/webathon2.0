@@ -7,58 +7,47 @@ const events = [
   {
     title: "Science Exhibition",
     category: "School Level",
-    image: "https://source.unsplash.com/800x600/?science,lab",
-  },
+    image: "WhatsApp Image 2025-08-20 at 3.35.55 PM.jpeg"  },
   {
     title: "Coding Competition",
     category: "School Level",
-    image: "https://source.unsplash.com/800x600/?coding,hackathon",
-  },
+    image: "WhatsApp Image 2025-08-20 at 3.30.43 PM.jpeg"  },
   {
     title: "Workshop",
     category: "School Level",
-    image: "https://source.unsplash.com/800x600/?workshop,students",
-  },
+    image: "WhatsApp Image 2025-08-20 at 3.35.52 PM.jpeg"  },
   {
     title: "Workshop & Seminar",
     category: "College Level",
-    image: "https://source.unsplash.com/800x600/?seminar,college",
-  },
+    image: "WhatsApp Image 2025-08-20 at 3.39.32 PM.jpeg"  },
   {
     title: "Capture the Flag (CTF)",
     category: "College Level",
-    image: "https://source.unsplash.com/800x600/?cybersecurity,hacking",
-  },
+    image: "Nirvana Tech Fest_GEHU.png"  },
   {
     title: "AWS Study Jam",
     category: "College Level",
-    image: "https://source.unsplash.com/800x600/?aws,cloud",
-  },
+    image: "IMG_9170.JPG"  },
   {
     title: "Hackathon",
     category: "College Level",
-    image: "https://source.unsplash.com/800x600/?hackathon,programming",
-  },
+    image: "IMG_9170.JPG"  },
   {
     title: "Stalls",
     category: "Outdoor",
-    image: "https://source.unsplash.com/800x600/?market,stall",
-  },
+    image: "IMG_9170.JPG"  },
   {
     title: "Treasure Hunt",
     category: "Outdoor",
-    image: "https://source.unsplash.com/800x600/?treasure,hunt",
-  },
+    image: "IMG_9209.JPG"  },
   {
     title: "DJ Night",
     category: "Outdoor",
-    image: "https://source.unsplash.com/800x600/?dj,party",
-  },
+    image: "IMG_9209.JPG"  },
   {
     title: "Cultural Events",
     category: "Outdoor",
-    image: "https://source.unsplash.com/800x600/?culture,festival",
-  },
+    image: "Nirvana Tech Fest_GEHU.png"  },
 ];
 
 export default function Events() {
