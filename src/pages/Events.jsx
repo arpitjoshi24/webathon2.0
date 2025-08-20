@@ -1,63 +1,136 @@
-import React from "react";
-import { motion } from "framer-motion";
+// Events.jsx
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const events = [
   {
-    title: "Hackathon 2025",
-    desc: "24-hour coding marathon to solve real-world challenges.",
-    date: "March 15, 2025",
+    title: "Science Exhibition",
+    category: "School Level",
+    image: "https://source.unsplash.com/800x600/?science,lab",
   },
   {
-    title: "Robo Wars",
-    desc: "Battle of autonomous and manually controlled robots.",
-    date: "March 16, 2025",
+    title: "Coding Competition",
+    category: "School Level",
+    image: "https://source.unsplash.com/800x600/?coding,hackathon",
   },
   {
-    title: "Tech Talks",
-    desc: "Industry leaders sharing insights on emerging technologies.",
-    date: "March 17, 2025",
+    title: "Workshop",
+    category: "School Level",
+    image: "https://source.unsplash.com/800x600/?workshop,students",
+  },
+  {
+    title: "Workshop & Seminar",
+    category: "College Level",
+    image: "https://source.unsplash.com/800x600/?seminar,college",
+  },
+  {
+    title: "Capture the Flag (CTF)",
+    category: "College Level",
+    image: "https://source.unsplash.com/800x600/?cybersecurity,hacking",
+  },
+  {
+    title: "AWS Study Jam",
+    category: "College Level",
+    image: "https://source.unsplash.com/800x600/?aws,cloud",
+  },
+  {
+    title: "Hackathon",
+    category: "College Level",
+    image: "https://source.unsplash.com/800x600/?hackathon,programming",
+  },
+  {
+    title: "Stalls",
+    category: "Outdoor",
+    image: "https://source.unsplash.com/800x600/?market,stall",
+  },
+  {
+    title: "Treasure Hunt",
+    category: "Outdoor",
+    image: "https://source.unsplash.com/800x600/?treasure,hunt",
+  },
+  {
+    title: "DJ Night",
+    category: "Outdoor",
+    image: "https://source.unsplash.com/800x600/?dj,party",
+  },
+  {
+    title: "Cultural Events",
+    category: "Outdoor",
+    image: "https://source.unsplash.com/800x600/?culture,festival",
   },
 ];
 
 export default function Events() {
-  return (
-    <section id="events" className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-16">
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <motion.h2
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-extrabold text-purple-400"
-        >
-           Our  Events
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-4 text-lg text-gray-300"
-        >
-          Experience the thrill of innovation, creativity, and technology.
-        </motion.p>
-      </div>
+  const [index, setIndex] = useState(0);
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {events.map((event, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="relative bg-gradient-to-br from-purple-900/40 to-cyan-900/40 p-6 rounded-2xl border border-purple-500/30 shadow-lg hover:shadow-purple-500/50 transition-all"
-          >
-            <h3 className="text-2xl font-bold text-cyan-400">{event.title}</h3>
-            <p className="mt-3 text-gray-300">{event.desc}</p>
-            <span className="inline-block mt-4 px-4 py-2 text-sm font-semibold bg-purple-600/30 border border-purple-400/40 rounded-full text-purple-300">
-              {event.date}
-            </span>
-            <div className="absolute inset-0 rounded-2xl bg-purple-500/10 blur-3xl -z-10"></div>
-          </motion.div>
-        ))}
+  // Auto-play every 4s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % events.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => setIndex((prev) => (prev + 1) % events.length);
+  const prevSlide = () =>
+    setIndex((prev) => (prev - 1 + events.length) % events.length);
+
+  return (
+    <section className="bg-black py-16">
+      <div className="relative w-full max-w-4xl mx-auto px-4">
+        <div className="overflow-hidden rounded-2xl shadow-2xl border border-purple-700">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <img
+                src={events[index].image}
+                alt={events[index].title}
+                className="w-full h-96 object-cover rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6">
+                <h2 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">
+                  {events[index].title}
+                </h2>
+                <p className="text-purple-400 text-lg">
+                  {events[index].category}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Navigation buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-4 -translate-y-1/2 bg-purple-600/70 p-2 rounded-full text-white hover:bg-purple-700 transition"
+        >
+          <ChevronLeft size={28} />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-4 -translate-y-1/2 bg-purple-600/70 p-2 rounded-full text-white hover:bg-purple-700 transition"
+        >
+          <ChevronRight size={28} />
+        </button>
+
+        {/* Dots indicator */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {events.map((_, i) => (
+            <div
+              key={i}
+              className={`w-3 h-3 rounded-full transition ${
+                i === index ? "bg-purple-500 scale-110" : "bg-gray-600"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
